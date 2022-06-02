@@ -23,13 +23,15 @@ function App() {
         <h2>3日間の気温</h2>
         <table className="my-table">
           <thead>
-            <th>日付</th>
-            <th>最高気温</th>
-            <th>最低気温</th>
+            <tr>
+              <th>日付</th>
+              <th>最高気温</th>
+              <th>最低気温</th>
+            </tr>
           </thead>
           <tbody>
           {temp.map(value => (
-            <tr>
+            <tr key={value.date}>
               <td>{value.date}</td>
               <td>{value.high}</td>
               <td>{value.low}</td>

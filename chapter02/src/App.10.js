@@ -10,7 +10,7 @@ function App() {
         <h1>食べ物</h1>
         <h2>好きな料理</h2>
         <div>
-        {foods.map(value => <li>{value}</li>)}
+        {foods.map(value => <li key={value}>{value}</li>)}
         </div>
       </div>
     </div>

@@ -27,7 +27,7 @@ function App() {
       <div>
         <h1>Nations</h1>
         <div style={divStyle}>
-          {nations.map(value => <li style={liStyle}>{value}</li>)}
+          {nations.map(value => <li key={value} style={liStyle}>{value}</li>)}
         </div>
       </div>
     </div>

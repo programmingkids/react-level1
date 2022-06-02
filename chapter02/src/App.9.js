@@ -3,17 +3,20 @@ import './App.css';
 
 function App() {
   const students = [{
-    name: 'Spiderman',
+    id: 1,
+    name: 'スパイダーマン',
     age: 17,
-    hobby: 'acrobat',
+    hobby: 'アクロバット',
   },{
-    name: 'Ironman',
+    id: 2,
+    name: 'アイアンマン',
     age: 22,
-    hobby: 'CEO',
+    hobby: '社長',
   },{
-    name: 'Hulk',
+    id: 3,
+    name: 'ハルク',
     age: 23,
-    hobby: 'gym',
+    hobby: '筋トレ',
   }];
   
   return (
@@ -31,7 +34,7 @@ function App() {
           </thead>
           <tbody>
           {students.map(value => (
-            <tr>
+            <tr key={value.id}>
               <td>{value.name}</td>
               <td>{value.age}</td>
               <td>{value.hobby}</td>

@@ -8,7 +8,7 @@ function App() {
       <div>
         <h1>Fruits</h1>
         <div>
-          {fruits.map(value => <li>{value}</li>)}
+          {fruits.map(value => <li key={value}>{value}</li>)}
         </div>
       </div>
     </div>
