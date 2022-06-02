@@ -38,7 +38,7 @@ const Person = (props) => (
 const Comments = (props) => (
   <div>
     <h2>コメント</h2>
-    {props.data.map(value => <li>{value}</li>)}
+    {props.data.map(value => <li key={value}>{value}</li>)}
   </div>
 );
 

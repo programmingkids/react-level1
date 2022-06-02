@@ -35,7 +35,7 @@ function App() {
 const Title = (props) => <h1>{props.children}</h1>;
 
 const ScoreTable = (props) => (
-  <table class="score-table">
+  <table className="score-table">
     <ScoreHeader />
     <ScoreBody data={props.data} />
   </table>
@@ -55,7 +55,7 @@ const ScoreHeader = () => (
 
 const ScoreBody = (props) => (
   <tbody>
-    {props.data.map((value) => <Score data={value} />)}
+    {props.data.map((value) => <Score key={value.name} data={value} />)}
   </tbody>
 );
 

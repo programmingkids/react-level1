@@ -50,7 +50,7 @@ const ItemHeader = () => (
 
 const ItemBody = (props) => (
   <tbody>
-  {props.data.map(value => <Item data={value} />)}
+  {props.data.map(value => <Item key={value.name} data={value} />)}
   </tbody>
 );
 

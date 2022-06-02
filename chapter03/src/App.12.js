@@ -21,7 +21,7 @@ const Title = (props) => <h1>{props.children}</h1>;
 
 const Enemies = (props) => (
   <div className="my-list-box">
-  {props.data.map(enemy => <Enemy data={enemy} />)}
+  {props.data.map(enemy => <Enemy key={enemy} data={enemy} />)}
   </div>
 );
 

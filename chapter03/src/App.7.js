@@ -18,7 +18,7 @@ const Title = (props) => <h1>{props.children}</h1>;
 
 const Fruits = (props) => (
   <div>
-  {props.data.map(value => <li>{value}</li>)}
+  {props.data.map(value => <li key={value}>{value}</li>)}
   </div>
 );
 
