@@ -37,6 +37,37 @@
   }
 }
 
+#colorBox {
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  border: 2px solid #cccccc;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.pink {
+  background-color: pink;
+}
+
+.orange {
+  background-color: orange;
+}
+
 .my-table {
   border-collapse: collapse;
   margin: 0 auto;
