@@ -7,15 +7,17 @@ function getRandomNumber(min, max) {
 }
 
 function App() {
-  const kuji = ['大吉','中吉','小吉','吉','凶'];
+  const kujiData = ['大吉','中吉','小吉','吉','凶'];
   
   const [omikuji, setOmikuji] = useState('');
   
   const handleClick = (event) => {
     const min = 0;
-    const max = kuji.length -1;
-    const randomNum = getRandomNumber(min,max);
-    setOmikuji(kuji[randomNum]);
+    const max = kujiData.length -1;
+    const randomNumber = getRandomNumber(min,max);
+    const newOmikuji = kujiData[randomNumber];
+    
+    setOmikuji(omikuji => newOmikuji);
   };
   
   return (
