@@ -71,16 +71,16 @@ const JankenButton = (props) => {
 const JankenResult = (props) => {
   const {te, comTe, result, teData, resultData} = props.data;
   return (
-    <div>
-      <div>
-        プレイヤー：{te !== '' && teData[te]}
+    <div className="score-list">
+      <div className="score-row">
+        <div>プレイヤー</div><div>{te !== '' && teData[te]}</div>
       </div>
-      <div>
-        コンピュータ：{comTe !== '' && teData[comTe]}
+      <div className="score-row">
+        <div>コンピュータ</div><div>{comTe !== '' && teData[comTe]}</div>
       </div>
-      <div>
-        結果：{result !== '' && resultData[result]}
-      </div>  
+      <div className="score-row">
+        <div>結果</div><div>{result !== '' && resultData[result]}</div>
+      </div>
     </div>
   );
 };
