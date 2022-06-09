@@ -36,3 +36,63 @@
     transform: rotate(360deg);
   }
 }
+
+input[type="text"] {
+  width: 300px;
+  margin: 0.2em;
+  padding: 0.4em;
+  font-size: 1.2em;
+}
+
+#area-container {
+  display:flex;
+  justify-content:center;
+}
+
+.area {
+  margin: 10px;
+  padding: 10px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  cursor: pointer;
+}
+
+.red-area {
+  background-color: #ff0000;
+  color: #ffffff;
+}
+
+.green-area {
+  background-color: #00ff00;
+  color: #ffffff;
+}
+
+.blue-area {
+  background-color: #0000ff;
+  color: #ffffff;
+}
+
+.white-area {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+#result {
+  margin: 10px;
+  padding: 10px;
+  height: 50px;
+  border: 1px solid #000000;
+}
+
+#message-box {
+  width : 400px;
+  height: 200px;
+  margin: 10px auto;
+  padding: 10px;
+  overflow: auto;
+  background-color: #ffffff;
+  border: 3px solid #cccccc;
+  text-align: left;
+}
