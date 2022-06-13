@@ -3,52 +3,34 @@ import './App.css';
 import {useState} from 'react';
 
 function App() {
-  const [color, setColor] = useState('white-area');
+  const [message, setMessage] = useState('');
   
-  const handleMouseOver = (event) => {
+  const handleFocus = (event) => {
     const id = event.target.id;
-    switch (id) {
-      case 'red':
-        setColor(prevColor => 'red-area');
-        break;
-      case 'blue':
-        setColor(prevColor => 'blue-area');
-        break;
-      case 'green':
-        setColor(prevColor => 'green-area');
-        break;
-    }
+    const text = `${id}にフォーカスしました<br />`;
+    const newMessage = message.concat(text);
+    setMessage(prevMessage => newMessage);
   };
   
-  const handleMouseOut = (event) => {
-    setColor(prevColor => 'white-area');
+  const handleBlur = (event) => {
+    const id = event.target.id;
+    const text = `${id}からフォーカスが外れました<br />`;
+    const newMessage = message.concat(text);
+    setMessage(prevMessage => newMessage);
   };
+
   
   return (
     <div className="App">
-      <Title>onMouseOver/onMouseOutイベント</Title>
-      <div id="area-container">
-        <div 
-          className="area red-area" 
-          id="red" 
-          onMouseOver={handleMouseOver}
-          onMouseOut={handleMouseOut}
-        >赤色</div>
-        <div 
-          className="area blue-area" 
-          id="blue" 
-          onMouseOver={handleMouseOver}
-          onMouseOut={handleMouseOut}
-        >青色</div>
-        <div 
-          className="area green-area" 
-          id="green" 
-          onMouseOver={handleMouseOver}
-          onMouseOut={handleMouseOut}
-        >緑色</div>
+      <Title>onFocus/onBlurイベント</Title>
+      <div>
+        名前：<input type="text" id="name" onFocus={handleFocus} onBlur={handleBlur} />
+      </div>
+      <div>
+        年齢：<input type="text" id="age" onFocus={handleFocus} onBlur={handleBlur} />
       </div>
       <hr />
-      <div id="result" className={color}></div>
+      <div id="message-box" dangerouslySetInnerHTML={{__html: message}}></div>
     </div>
   );
 }
