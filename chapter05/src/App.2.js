@@ -9,7 +9,7 @@ function getRandomNumber(min, max) {
 function App() {
   return (
     <div className="App">
-      <Title>7の倍数判定</Title>
+      <Title>3の倍数判定</Title>
       <NumberBox />
     </div>
   );
@@ -27,10 +27,10 @@ const NumberBox = () => {
   useEffect(() =>{
     if( number === undefined) {
       setMessage('');
-    } else if(number % 7 === 0) {
-      setMessage(() => '7の倍数です');
+    } else if(number % 3 === 0) {
+      setMessage('3の倍数です');
     } else {
-      setMessage(() => '7の倍数ではありません');
+      setMessage('3の倍数ではありません');
     }
   },[number]);
   

@@ -15,10 +15,11 @@ const CountBox = () => {
   const [count, setCount] = useState(0);
   
   useEffect(() => {
-    setTimeout(() => {
+    let timer = setInterval(() => {
       setCount(count => count + 1);
     }, 1000);
-  });
+    return () => clearInterval(timer);
+  }, []);
   
   return <div>カウント：{count}</div>;
 };
