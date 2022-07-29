@@ -1,40 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
-import {useState} from 'react';
 
 function App() {
-  const [message, setMessage] = useState('');
-  
-  const handleFocus = (event) => {
-    const id = event.target.id;
-    const text = `${id}にフォーカスしました<br />`;
-    const newMessage = message.concat(text);
-    setMessage(prevMessage => newMessage);
-  };
-  
-  const handleBlur = (event) => {
-    const id = event.target.id;
-    const text = `${id}からフォーカスが外れました<br />`;
-    const newMessage = message.concat(text);
-    setMessage(prevMessage => newMessage);
-  };
-
-  
   return (
     <div className="App">
-      <Title>onFocus/onBlurイベント</Title>
-      <div>
-        名前：<input type="text" id="name" onFocus={handleFocus} onBlur={handleBlur} />
-      </div>
-      <div>
-        年齢：<input type="text" id="age" onFocus={handleFocus} onBlur={handleBlur} />
-      </div>
-      <hr />
-      <div id="message-box" dangerouslySetInnerHTML={{__html: message}}></div>
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }
-
-const Title = (props) => <h1>{props.children}</h1>;
 
 export default App;
