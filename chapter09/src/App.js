@@ -1,63 +1,64 @@
-import logo from './logo.svg';
-import './App.css';
-import {useState} from 'react';
+import logo from "./logo.svg";
+import "./App.css";
+import { useState } from "react";
 
 function App() {
   const [data, setData] = useState({
-    item : '',
-    amount : '',
+    item: "",
+    amount: "",
   });
-  
+
   const [list, setList] = useState([]);
-  
+
   const handleChange = (event) => {
-    const newData = {...data};
-    newData[event.target.id] = event.target.value;
-    setData(prevData => newData);
+    setData((data) => ({
+      ...data,
+      [event.target.id]: event.target.value,
+    }));
   };
-  
+
   const handleClick = (event) => {
-    setList(list => list.concat(data));
-    
+    setList((list) => list.concat(data));
+
     setData({
-      item : '',
-      amount : '',
+      item: "",
+      amount: "",
     });
   };
-  
+
   return (
     <div className="App">
-    <Title>ショッピングリスト</Title>
-    <ControlBox
-      handleChange={handleChange} 
-      handleClick={handleClick}
-      data={data}
-    />
-    <TableBox list={list} />
+      <Title>ショッピングリスト</Title>
+      <ControlBox
+        handleChange={handleChange}
+        handleClick={handleClick}
+        data={data}
+      />
+      <TableBox list={list} />
     </div>
   );
 }
 
 const Title = (props) => <h1>{props.children}</h1>;
 
-const ControlBox = ({handleChange, handleClick, data}) => (
+const ControlBox = ({ handleChange, handleClick, data }) => (
   <div id="control">
     <div>
       商品：
-      <input 
-        type="text" 
-        id="item" 
-        autoComplete="off" 
+      <input
+        type="text"
+        id="item"
+        autoComplete="off"
         onChange={handleChange}
         value={data.item}
       />
     </div>
     <div>
       個数：
-      <input 
-        type="number" 
-        id="amount" 
-        autoComplete="off" 
+      <input
+        type="number"
+        id="amount"
+        autoComplete="off"
         onChange={handleChange}
         value={data.amount}
       />
@@ -72,7 +73,9 @@ const TableBox = (props) => (
   <table className="my-table">
     <TableHeader />
     <tbody>
-    {props.list.map((row, index) => <TableRow key={index} row={row} />)}
+      {props.list.map((row, index) => (
+        <TableRow key={index} row={row} />
+      ))}
     </tbody>
   </table>
 );
@@ -87,7 +90,7 @@ const TableHeader = () => (
 );
 
 const TableRow = (props) => {
-  const {item, amount} = props.row;
+  const { item, amount } = props.row;
   return (
     <tr>
       <td>{item}</td>
