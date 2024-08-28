@@ -1,0 +1,121 @@
+.App {
+  text-align: center;
+}
+
+.clock {
+  width: 250px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #2A31FF;
+  color: #fff;
+}
+
+.clock .date {
+	animation: blink 0.5s ease-in-out infinite alternate;
+}
+ 
+@keyframes blink {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+.my-list {
+  counter-reset:list;
+  list-style-type:none;
+  width: 200px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.my-list li{
+  position:relative;
+  margin: 10px 0 10px 40px;
+  padding: 10px 30px;
+  font-size: 1em;
+  border-bottom:solid 2px #FF8E8E;
+}
+
+.my-list li:before{
+  counter-increment: list;
+  content: counter(list);
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 0px;
+  top: 50%;
+  line-height: 25px;
+  text-align: center;
+  color: #ffffff;
+  background: #FF8E8E;
+  border-radius: 50%;
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.score-list {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.score-row {
+  border-bottom: solid 2px white;
+  display:flex;
+}
+
+.score-row div:first-child {
+  position: relative;
+  width: 40%;
+  padding: 15px 0;
+  background-color: #52c2d0;
+  color: white;
+  text-align: center;
+}
+
+.score-row div:first-child:after{
+  position: absolute;
+  content: "";
+  width: 0px;
+  height: 0px;
+  top:calc(50% - 10px);
+  right:-10px;
+  border-left: 10px solid #52c2d0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.score-row div:last-child{
+  width: 60%;
+  padding: 15px 0;
+  background-color: #eee;
+  text-align: center;
+}
+
+.my-table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  width: 70%;
+}
+
+.my-table tr{
+  cursor: pointer;
+  background-color: #f1f8ff;
+}
+
+.my-table tr:hover{
+  background-color: #d4f0fd;
+}
+
+.my-table th,table td{
+  text-align: center;
+  width: 25%;
+  padding: 15px 0;
+  border: 1px solid #ccc;
+}
+
+.my-table th {
+  background-color : #2d8fdd;
+  color: #fff;
+}
